@@ -16,7 +16,7 @@ export interface ClientData {
 	img: string;
   }
 
-export const clientsHeading = 'Some of the brands that trust me';
+export const clientsHeading = 'Some of the technologies I work with';
 
 export const clientsData: ClientData[] = [
   { id: 1, title: 'Html', img: Html },
