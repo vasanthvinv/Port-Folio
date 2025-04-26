@@ -60,7 +60,7 @@ const AppHeader = () => {
             {activeTheme === "dark" ? (
               <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
             ) : (
-<FiSun className="text-yellow-400 hover:text-yellow-300 text-xl" />
+              <FiSun className="text-yellow-400 hover:text-yellow-300 text-xl" />
             )}
           </div>
 
@@ -136,7 +136,9 @@ const AppHeader = () => {
             {activeTheme === "dark" ? (
               <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
             ) : (
-<FiSun className="text-yellow-400 hover:text-yellow-300 text-xl" />
+              <div className="bg-yellow-100 hover:bg-yellow-200 transition-colors duration-200">
+                <FiSun className="text-yellow-500 text-2xl" />
+              </div>
             )}
           </div>
         </div>
