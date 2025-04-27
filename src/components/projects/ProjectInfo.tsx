@@ -2,27 +2,10 @@ import { useContext } from "react";
 import SingleProjectContext from "../../context/SingleProjectContext";
 import TodoView from "./todo/TodoView";
 
-interface Technology {
-  title: string;
-  techs: string[];
-}
-
 interface CompanyInfoItem {
   id: number;
   title: string;
   details: string;
-}
-
-interface ProjectInfoData {
-  ClientHeading: string;
-  CompanyInfo: CompanyInfoItem[];
-  ObjectivesHeading: string;
-  ObjectivesDetails: string;
-  Technologies: Technology[];
-  ProjectDetailsHeading: string;
-  ProjectDetails: { id: number; details: string }[];
-  SocialSharingHeading: string;
-  SocialSharing: { id: number; name: string; url: string }[];
 }
 
 const ProjectInfo = () => {
