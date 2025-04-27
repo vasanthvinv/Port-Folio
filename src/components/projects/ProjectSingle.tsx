@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
+import { Key } from 'react';
 import { Link } from 'react-router-dom';
 
 interface ProjectSingleProps {
   title: string;
   category: string;
   image: string;
-  id?: string; 
+  id: Key | null | undefined; 
 }
 
 const ProjectSingle = ({ 
@@ -14,6 +15,7 @@ const ProjectSingle = ({
   image,
   id 
 }: ProjectSingleProps) => {
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +27,7 @@ const ProjectSingle = ({
       }}
     >
       <Link 
-        to={`/projects/single-project${id ? `?id=${id}` : ''}`} 
+        to={`/projects/single-project${id ? `/${id}` : ''}`} 
         aria-label={`View ${title} project`}
       >
         <div className="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">

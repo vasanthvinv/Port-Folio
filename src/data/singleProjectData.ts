@@ -6,6 +6,7 @@ import Image5 from '../images/web-project-1.jpg';
 import Image6 from '../images/ui-project-2.jpg';
 import { JSX, ReactElement } from 'react';
 
+// Interface definitions remain the same
 interface ProjectHeader {
   title: string;
   publishDate: string;
@@ -65,150 +66,305 @@ interface RelatedProject {
 }
 
 export interface SingleProjectData {
+  id: number; // Added ID field
   ProjectHeader: ProjectHeader;
   ProjectImages: ProjectImage[];
   ProjectInfo: ProjectInfo;
   RelatedProject: RelatedProject;
 }
 
-// Export typed data
-export const singleProjectData: SingleProjectData = {
+// Create multiple project data objects
+const productivityPro: SingleProjectData = {
+  id: 1,
   ProjectHeader: {
-    title: 'Project Management UI',
-    publishDate: 'Jul 26, 2021',
-    tags: 'UI / Frontend',
+    title: 'Productivity Pro - Todo List',
+    publishDate: 'Mar 15, 2025',
+    tags: 'Full Stack / Productivity App',
   },
   ProjectImages: [
     {
       id: 1,
-      title: 'Kabul Project Management UI',
+      title: 'Todo App Main Interface',
       img: Image1,
     },
     {
       id: 2,
-      title: 'Kabul Project Management UI',
+      title: 'Mobile Task Management',
       img: Image2,
     },
     {
       id: 3,
-      title: 'Kabul Project Management UI',
+      title: 'Team Collaboration View',
       img: Image3,
     },
   ],
   ProjectInfo: {
-    ClientHeading: 'About Client',
+    ClientHeading: 'Project Overview',
     CompanyInfo: [
       {
         id: 1,
-        title: 'Name',
-        details: 'Company Ltd',
+        title: 'Project Name',
+        details: 'Productivity Pro',
       },
       {
         id: 2,
-        title: 'Services',
-        details: 'UI Design & Frontend Development',
+        title: 'Category',
+        details: 'Productivity Suite',
       },
       {
         id: 3,
-        title: 'Website',
-        details: 'https://company.com',
+        title: 'Repository',
+        details: 'github.com/yourrepo/todo-pro',
       },
       {
         id: 4,
-        title: 'Phone',
-        details: '555 8888 888',
+        title: 'Tech Stack',
+        details: 'MERN (MongoDB, Express, React, Node)',
       },
     ],
-    ObjectivesHeading: 'Objective',
+    ObjectivesHeading: 'Project Goals',
     ObjectivesDetails:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+      'Develop a comprehensive productivity application with intelligent task management, team collaboration features, and AI-powered suggestions to optimize personal and professional workflows.',
     Technologies: [
       {
-        title: 'Tools & Technologies',
+        title: 'Core Technologies',
         techs: [
-          'HTML',
-          'CSS',
-          'JavaScript',
-          'Vue.js',
-          'TailwindCSS',
-          'AdobeXD',
+          'React 18',
+          'Node.js',
+          'MongoDB Atlas',
+          'GraphQL',
+          'Material UI',
+          'Jest',
+          'Cypress'
+        ],
+      },
+      {
+        title: 'Additional Tools',
+        techs: [
+          'OpenAI API',
+          'WebSocket',
+          'Jira Integration',
+          'Google Calendar API',
+          'Stripe Payments'
         ],
       },
     ],
-    ProjectDetailsHeading: 'Challenge',
+    ProjectDetailsHeading: 'Key Features',
     ProjectDetails: [
       {
         id: 1,
         details:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
+          'Smart Task Prioritization: Implemented an AI-driven Eisenhower Matrix that automatically categorizes tasks based on urgency and importance, with dynamic reprioritization as deadlines approach.',
       },
       {
         id: 2,
         details:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
+          'Cross-Platform Sync: Built a real-time synchronization engine using WebSockets and GraphQL subscriptions, ensuring instant updates across all devices with conflict resolution for offline edits.',
       },
       {
         id: 3,
         details:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
+          'Team Workspaces: Developed collaborative spaces with role-based permissions, @mentions, and activity feeds, enabling seamless teamwork with integrated video conferencing via Daily.co API.',
       },
       {
         id: 4,
         details:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
+          'Productivity Analytics: Created comprehensive dashboards with time tracking integration, habit formation metrics, and personalized improvement suggestions using machine learning models.',
       },
     ],
-    SocialSharingHeading: 'Share This',
+    SocialSharingHeading: 'Project Links',
     SocialSharing: [
       {
         id: 1,
-        name: 'Instagram',
-        // icon: <FiInstagram />,
-        url: 'https://instagram.com/realstoman',
+        name: 'GitHub Repo',
+        url: 'https://github.com/yourrepo/todo-pro',
       },
       {
         id: 2,
-        name: 'Git-Hub',
-        // icon: <FiFacebook />,
-        url: 'https://facebook.com/',
+        name: 'Case Study',
+        url: 'https://medium.com/yourblog/todo-case-study',
       },
       {
         id: 3,
-        name: 'LinkedIn',
-        // icon: <FiLinkedin />,
-        url: 'https://linkedin.com/',
+        name: 'Live Demo',
+        url: 'https://demo.productivitypro.app',
       },
       {
         id: 4,
-        name: 'GMail',
-        // icon: <FiYoutube />,
-        url: 'https://www.youtube.com/c/StomanStudio',
+        name: 'Product Hunt',
+        url: 'https://producthunt.com/products/productivity-pro',
       },
     ],
   },
   RelatedProject: {
-    title: 'Related Projects',
+    title: 'More Productivity Tools',
     Projects: [
       {
         id: 1,
-        title: 'Mobile UI',
+        title: 'Time Block Planner',
         img: Image4,
       },
       {
         id: 2,
-        title: 'Web Application',
+        title: 'Meeting Note Taker',
         img: Image5,
       },
       {
         id: 3,
-        title: 'UI Design',
+        title: 'Focus Timer',
         img: Image6,
       },
       {
         id: 4,
-        title: 'Kabul Mobile App UI',
+        title: 'Goal Tracker',
         img: Image3,
       },
     ],
   },
 };
+
+const eCommercePlatform: SingleProjectData = {
+  id: 2,
+  ProjectHeader: {
+    title: 'E-Commerce Platform',
+    publishDate: 'Jan 20, 2025',
+    tags: 'Full Stack / E-Commerce',
+  },
+  ProjectImages: [
+    {
+      id: 1,
+      title: 'Product Listing Page',
+      img: Image4,
+    },
+    {
+      id: 2,
+      title: 'Shopping Cart',
+      img: Image5,
+    },
+    {
+      id: 3,
+      title: 'Checkout Process',
+      img: Image6,
+    },
+  ],
+  ProjectInfo: {
+    ClientHeading: 'Project Overview',
+    CompanyInfo: [
+      {
+        id: 1,
+        title: 'Project Name',
+        details: 'ShopSphere',
+      },
+      {
+        id: 2,
+        title: 'Category',
+        details: 'E-Commerce Platform',
+      },
+      {
+        id: 3,
+        title: 'Repository',
+        details: 'github.com/yourrepo/shopsphere',
+      },
+      {
+        id: 4,
+        title: 'Tech Stack',
+        details: 'Next.js, Node.js, PostgreSQL',
+      },
+    ],
+    ObjectivesHeading: 'Project Goals',
+    ObjectivesDetails:
+      'Build a scalable e-commerce platform with modern features like AI-powered recommendations, AR product previews, and seamless checkout experience.',
+    Technologies: [
+      {
+        title: 'Core Technologies',
+        techs: [
+          'Next.js',
+          'Node.js',
+          'PostgreSQL',
+          'Redis',
+          'Tailwind CSS',
+          'Jest'
+        ],
+      },
+      {
+        title: 'Additional Tools',
+        techs: [
+          'Stripe API',
+          'Cloudinary',
+          'Algolia Search',
+          'WebRTC',
+          'Three.js'
+        ],
+      },
+    ],
+    ProjectDetailsHeading: 'Key Features',
+    ProjectDetails: [
+      {
+        id: 1,
+        details:
+          'AI Recommendations: Implemented a machine learning model that suggests products based on browsing history and purchase patterns.',
+      },
+      {
+        id: 2,
+        details:
+          'AR Product Previews: Integrated WebXR for augmented reality product visualization directly in the browser.',
+      },
+      {
+        id: 3,
+        details:
+          'Instant Checkout: Developed a one-click checkout system with biometric authentication for returning customers.',
+      },
+    ],
+    SocialSharingHeading: 'Project Links',
+    SocialSharing: [
+      {
+        id: 1,
+        name: 'GitHub Repo',
+        url: 'https://github.com/yourrepo/shopsphere',
+      },
+      {
+        id: 2,
+        name: 'Live Demo',
+        url: 'https://demo.shopsphere.app',
+      },
+    ],
+  },
+  RelatedProject: {
+    title: 'More E-Commerce Projects',
+    Projects: [
+      {
+        id: 1,
+        title: 'Marketplace API',
+        img: Image1,
+      },
+      {
+        id: 2,
+        title: 'POS System',
+        img: Image2,
+      },
+      {
+        id: 3,
+        title: 'Inventory Manager',
+        img: Image3,
+      },
+    ],
+  },
+};
+
+export const allProjects: SingleProjectData[] = [
+  productivityPro,
+  eCommercePlatform,
+];
+
+export function getProjectById(id: number): SingleProjectData {
+  const project = allProjects.find(project => project.id === id);
+  
+  if (!project) {
+    console.warn(`Project with ID ${id} not found, returning first project`);
+    return allProjects[0];
+  }
+  
+  return project;
+}
+
+export const singleProjectData = productivityPro;

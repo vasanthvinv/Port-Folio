@@ -1,19 +1,19 @@
-import { AnimatePresence } from 'framer-motion';
-import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
-import AppFooter from './components/shared/AppFooter';
-import AppHeader from './components/shared/AppHeader';
-import './css/App.css';
-import './css/main.css';
-import './css/tailwind.css';
-import UseScrollToTop from './hooks/useScrollToTop';
+import { AnimatePresence } from "framer-motion";
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import AppFooter from "./components/shared/AppFooter";
+import AppHeader from "./components/shared/AppHeader";
+import "./css/App.css";
+import "./css/main.css";
+import "./css/tailwind.css";
+import UseScrollToTop from "./hooks/useScrollToTop";
 
-const About = lazy(() => import('./pages/AboutMe'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Home = lazy(() => import('./pages/Home'));
-const Projects = lazy(() => import('./pages/Projects'));
-const ProjectSingle = lazy(() => import('./pages/ProjectSingle'));
+const About = lazy(() => import("./pages/AboutMe"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Home = lazy(() => import("./pages/Home"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectSingle = lazy(() => import("./pages/ProjectSingle"));
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="projects" element={<Projects />} />
               <Route
-                path="projects/single-project"
+                path="projects/single-project/:id"
                 element={<ProjectSingle />}
               />
               <Route path="about" element={<About />} />

@@ -1,6 +1,5 @@
 import { useState, createContext, ReactNode, Dispatch, SetStateAction, JSX } from 'react';
-import { SingleProjectData, singleProjectData as singleProjectDataJson } from '../data/singleProjectData';
-
+import { SingleProjectData } from '../data/singleProjectData';
 
 interface SingleProjectContextType {
   singleProjectData: SingleProjectData;
@@ -11,10 +10,11 @@ const SingleProjectContext = createContext<SingleProjectContextType | undefined>
 
 interface SingleProjectProviderProps {
   children: ReactNode;
+  initialData: SingleProjectData;
 }
 
-export const SingleProjectProvider = ({ children }: SingleProjectProviderProps): JSX.Element => {
-  const [singleProjectData, setSingleProjectData] = useState<SingleProjectData>(singleProjectDataJson);
+export const SingleProjectProvider = ({ children, initialData }: SingleProjectProviderProps): JSX.Element => {
+  const [singleProjectData, setSingleProjectData] = useState<SingleProjectData>(initialData);
 
   return (
     <SingleProjectContext.Provider value={{ singleProjectData, setSingleProjectData }}>
